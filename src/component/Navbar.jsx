@@ -2,6 +2,7 @@ import { Web3Button } from "@web3modal/react";
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
 import logo from "../assets/photobloc_klogo.svg";
+import github from "../assets/github.svg";
 
 export default function Navbar() {
   return (
@@ -12,7 +13,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div>
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-6">
           <Link to="/" className="text-teal-500 hover:text-fuchsia-500">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +29,14 @@ export default function Navbar() {
                 d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
               />
             </svg>
+          </Link>
+          <Link to="https://github.com/dcryptoniun/photoblock" target="blank">
+            <img
+              className="bg-teal-500 rounded-full hover:bg-fuchsia-500"
+              src={github}
+              width={20}
+              alt="github link"
+            />
           </Link>
           <Link to="/settings">
             <Profile />

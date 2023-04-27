@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import confi from "../contract/Config.json";
 import Abi from "../contract/Abi.json";
@@ -27,6 +27,16 @@ const Upload = () => {
     hash: data?.hash,
   });
 
+  useEffect(() => {
+    if (isSuccess) {
+      toast.dismiss(); // close any existing toast
+      toast("Saved to PhotoBlock successfully");
+      setTimeout(() => {
+        window.location.reload(); // reload the page to reset all value
+      }, 3000); // reload the page
+    }
+  }, [isSuccess]);
+
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
   };
@@ -49,8 +59,10 @@ const Upload = () => {
         },
       });
       setCid(response.data.IpfsHash);
+      toast("Uploaded successfully, click on 'Save to PhotoBlock'...");
     } catch (error) {
       console.error(error);
+      toast.error(error.message);
     } finally {
       setLoading(false);
     }
@@ -77,7 +89,6 @@ const Upload = () => {
                 {loading ? "Uploading..." : "Upload"}
               </button>
             )}{" "}
-            {loading && toast("uploading")}
           </div>
           <div>
             {cid && (
@@ -89,9 +100,6 @@ const Upload = () => {
                 {isLoading ? "Saving..." : "Save to PhotoBlock"}
               </button>
             )}
-            {isLoading && toast("saving......")}
-            {isSuccess && toast("saved sucessfully")}
-            {isSuccess && location.reload()}
           </div>
         </div>
         <div>
