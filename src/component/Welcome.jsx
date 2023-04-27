@@ -1,4 +1,5 @@
 import { Web3Button } from "@web3modal/react";
+import logo from "../assets/photobloc_klogo.svg";
 
 export default function Welcome() {
   return (
@@ -22,10 +23,10 @@ export default function Welcome() {
                 <Web3Button icon="hide" />
               </div>
             </div>
-            <div className="hidden md:block md:w-4/12">
+            <div className="hidden shadow-xl shadow-slate-400 md:block md:w-4/12 ">
               <img
                 width={120}
-                src="https://gateway.ipfs.io/ipfs/QmdXDmG5KvitBwB2nwfsRqrAxHE1mQm1BnB1PYayLGt35Q"
+                src={logo}
                 alt="Decentralized photo storage/gallery website"
                 className="w-full rounded-lg shadow-lg"
               />

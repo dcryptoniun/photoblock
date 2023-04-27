@@ -58,11 +58,6 @@ const Upload = () => {
 
   const handleWrite = () => {
     write();
-    // if (isSuccess) {
-    //   alert("Image saved successfully");
-    //   setCid(null);
-    //   setFile(null);
-    // }
   };
 
   return (

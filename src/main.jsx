@@ -12,7 +12,7 @@ import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { filecoinHyperspace } from "wagmi/chains";
 
 const chains = [filecoinHyperspace];
-const projectId = "f4d2984143cf717cb0228a57db55a520";
+const projectId = import.meta.env.VITE_WEB3MODAL_PROJECT_ID;
 
 const { provider } = configureChains(chains, [w3mProvider({ projectId })]);
 const wagmiClient = createClient({
@@ -35,7 +35,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         "--w3m-accent-fill-color": "#ffff",
       }}
-      projectId={"f4d2984143cf717cb0228a57db55a520"}
+      projectId={projectId}
       ethereumClient={ethereumClient}
     />
   </React.StrictMode>

@@ -1,15 +1,14 @@
 import { Web3Button } from "@web3modal/react";
 import { Link } from "react-router-dom";
 import Profile from "./Profile";
+import logo from "../assets/photobloc_klogo.svg";
 
 export default function Navbar() {
   return (
     <div className="sticky top-0 flex items-center justify-between w-full h-auto p-2 bg-transparent backdrop-blur">
       <div>
-        <Link to="/">
-          <h1 className="text-xl font-extrabold text-transparent md:text-3xl bg-gradient-to-t from-teal-500 to-fuchsia-500 bg-clip-text hover:bg-gradient-to-b">
-            PhotoBlock
-          </h1>
+        <Link to="/" className="flex scale-150 animate-bounce">
+          <img src={logo} width={40} />
         </Link>
       </div>
       <div>
