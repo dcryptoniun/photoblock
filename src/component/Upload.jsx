@@ -33,7 +33,7 @@ const Upload = () => {
       toast("Saved to PhotoBlock successfully");
       setTimeout(() => {
         window.location.reload(); // reload the page to reset all value
-      }, 3000); // reload the page
+      }, 5000); // reload the page
     }
   }, [isSuccess]);
 

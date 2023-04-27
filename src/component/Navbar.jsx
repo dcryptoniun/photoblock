@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import Profile from "./Profile";
 import logo from "../assets/photobloc_klogo.svg";
 import github from "../assets/github.svg";
+import confi from "../contract/Config.json";
 
 export default function Navbar() {
+  const scanlink = confi.SCAN_LINK;
   return (
     <div className="sticky top-0 flex items-center justify-between w-full h-auto p-2 bg-transparent backdrop-blur">
       <div>
@@ -37,6 +39,13 @@ export default function Navbar() {
               width={20}
               alt="github link"
             />
+          </Link>
+          <Link
+            to={scanlink}
+            target="blank"
+            className="text-teal-500 hover:text-fuchsia-500"
+          >
+            Explorer
           </Link>
           <Link to="/settings">
             <Profile />
